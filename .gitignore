@@ -1,0 +1,12 @@
+# Dados reais do Círculo (desabafos de pessoas) — nunca versionar
+community-data.json
+community-data.json.bak
+community-data*.json
+
+# Sistema / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+.vscode/
+.idea/
