@@ -23,7 +23,7 @@ O `serve.ps1` serve os arquivos estáticos **e** a API do Círculo. Ele precisa 
 
 **Hoje** — uma tirinha, uma lição e uma pausa por dia, mais um cartão de apoio com o CVV (188).
 
-**Tirinhas** — 13 histórias em quadrinhos com arte vetorial original (SVG, sem imagem externa): Sísifo, o pescador e o executivo, Diógenes e Alexandre, a espada de Dâmocles, o anel de Giges, a caverna, o velho e o cavalo, o vaso rachado, o barco vazio, o rei e a camisa, as três metamorfoses, Antígona e Zhuangzi com a borboleta.
+**Tirinhas** — 19 histórias em quadrinhos com arte vetorial original (SVG, sem imagem externa): Sísifo, o pescador e o executivo, Diógenes e Alexandre, a espada de Dâmocles, o anel de Giges, a caverna, o velho e o cavalo, o vaso rachado, o barco vazio, o rei e a camisa, as três metamorfoses, Antígona, Zhuangzi com a borboleta, **Kafka** (A metamorfose e Diante da lei), **Clóvis de Barros Filho**, **Ailton Krenak**, **Byung-Chul Han** e o conto do **bambu que esperou**.
 
 **Lições** — 13 leituras curtas sobre trabalho, dinheiro, presença, descanso, comparação, identidade, pertencimento, medo do futuro e pedir ajuda. Cada uma traz **três atos para fazer hoje**.
 
@@ -87,7 +87,7 @@ O app é estático, então o Pages serve tudo — **menos a API**. No Pages o C�
 | `index.html` | Estrutura, telas, diálogos |
 | `styles.css` | Tema claro/escuro, layout, tirinhas, Círculo |
 | `content.js` | Citações, 13 lições, 7 pausas |
-| `comics.js` | Roteiro das 13 tirinhas |
+| `comics.js` | Roteiro das 19 tirinhas |
 | `comicart.js` | Arte SVG das cenas |
 | `app.js` | Rotas, leitor, diário, práticas, Círculo na interface |
 | `circle.js` | Camada de dados do Círculo (online + local) |

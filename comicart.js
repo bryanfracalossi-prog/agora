@@ -426,7 +426,7 @@ const COMICART = (() => {
   function tree(x, y, s = 1, color = C.greenDark) {
     return `<g transform="translate(${x} ${y}) scale(${s})">
       <ellipse cx="0" cy="2" rx="28" ry="4" fill="${C.shadow}"/>
-      <path d="M0 0 V-46 M0 -34 L-16 -48 M0 -40 L15 -52" fill="none" stroke="${C.brown}" stroke-width="7" stroke-linecap="round" ${st(0)}/>
+      <path d="M0 0 V-46 M0 -34 L-16 -48 M0 -40 L15 -52" fill="none" stroke="${C.brown}" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
       <path d="M-26 -58 Q-34 -76 -18 -84 Q-6 -96 10 -86 Q28 -84 30 -66 Q42 -54 28 -44 Q12 -36 0 -44 Q-16 -36 -26 -44 Q-38 -50 -26 -58 Z" fill="${color}" ${st(2.6)}/>
       <path d="M-18 -72 q10 -10 24 -6" fill="none" stroke="${C.cream}" stroke-width="2" opacity=".25"/>
     </g>`;
@@ -858,13 +858,44 @@ const COMICART = (() => {
     const sk = sky(time);
     const dark = time === 'night' || time === 'dark';
     const dream = variant === 'butterfly';
+    const sprout = variant === 'bamboo';
+    const tall = variant === 'bamboo-tall';
+    const grove = sprout || tall;
     return sk.defs + sk.body + `
       <path d="M0 300 V186 Q70 158 140 180 Q210 202 280 176 Q340 154 400 178 V300 Z" fill="${dark ? '#27443c' : '#86ad7f'}" ${st(2.6)}/>
       <path d="M0 300 V232 Q100 210 200 228 Q300 246 400 218 V300 Z" fill="${dark ? '#1f3832' : '#628e66'}" ${st(2.6)}/>
       <path d="M0 300 V262 Q120 242 240 258 Q320 270 400 254 V300 Z" fill="${dark ? '#172b26' : '#4a7554'}" ${st(2.4)}/>
       ${dark ? `<path d="M300 300 V210 Q300 190 320 190 Q340 190 340 210 V300 Z" fill="#31555a" ${st(2.2)}/><path d="M306 240 q16 -4 28 0" fill="none" stroke="${C.cream}" stroke-width="1.6" opacity=".45"/>` : ''}
       ${tree(92, 256, 1.15, dark ? '#1d3b30' : C.greenDark)}
-      ${lying(176, 268, .95, { shirt: C.teal, hair: '#d46a8e', headphones: true, rot: -4 })}
+      ${grove ? '' : lying(176, 268, .95, { shirt: C.teal, hair: '#d46a8e', headphones: true, rot: -4 })}
+      ${grove ? `
+        ${tall ? `
+          <g>
+            <path d="M320 300 V100" fill="none" stroke="${dark ? '#3a6049' : '#8bbb67'}" stroke-width="10" stroke-linecap="round"/>
+            <path d="M286 300 V158" fill="none" stroke="${dark ? '#325340' : '#7cab5c'}" stroke-width="8" stroke-linecap="round"/>
+            <g stroke="${dark ? '#25412f' : '#5f8f46'}" stroke-width="2.2" opacity=".9">
+              <path d="M313 262 h14 M313 216 h14 M313 170 h14 M313 128 h14"/>
+              <path d="M281 258 h10 M281 216 h10 M281 178 h10"/>
+            </g>
+            <g fill="${dark ? '#2f5641' : '#6fa04f'}" ${st(2)}>
+              <path d="M320 168 q34 -22 46 -2 q-24 14 -46 2 z"/>
+              <path d="M320 214 q-30 -18 -44 -2 q22 14 44 2 z"/>
+              <path d="M286 206 q28 -20 40 -4 q-20 14 -40 4 z"/>
+            </g>
+          </g>
+        ` : `
+          <g>
+            <path d="M320 300 V268" fill="none" stroke="${dark ? '#3a6049' : '#8bbb67'}" stroke-width="7" stroke-linecap="round"/>
+            <g fill="${dark ? '#2f5641' : '#6fa04f'}" ${st(2)}>
+              <path d="M320 274 q26 -16 36 -2 q-18 12 -36 2 z"/>
+              <path d="M320 282 q-22 -12 -32 0 q16 10 32 0 z"/>
+            </g>
+            <path d="M320 300 q-6 6 -10 2 M320 300 q6 6 10 2" fill="none" stroke="${dark ? '#25412f' : '#5f8f46'}" stroke-width="2" opacity=".7"/>
+          </g>
+        `}
+        ${person({ x: 176, y: 274, s: .8, shirt: C.teal, pose: 'stand', face: 'neutral', hairStyle: 'short' })}
+        ${person({ x: 214, y: 276, s: .72, shirt: '#7a5b3a', pose: 'point', face: 'smile', hairStyle: 'bald' })}
+      ` : ''}
       <g fill="none" stroke="${dark ? '#1b332b' : C.greenDark}" stroke-width="2.4" stroke-linecap="round">
         <path d="M250 282 q-4 -20 6 -30"/><path d="M258 278 q-12 -6 -16 -16"/><path d="M262 272 q10 -8 12 -18"/>
         <path d="M320 292 q-2 -16 6 -24"/><path d="M326 288 q-10 -4 -14 -12"/>
@@ -889,7 +920,148 @@ const COMICART = (() => {
     `;
   }
 
-  const SCENES = { mountain, beach, square, palace, cave, farm, pottery, river, kingdom, road, desert, gate, meadow };
+  /* quarto: cama, janela e a mesa com o computador aceso */
+  function room(time, variant) {
+    const dark = time === 'night' || time === 'dark';
+    const warm = time === 'dusk' || time === 'dawn';
+    const wall = dark ? '#2c3237' : warm ? '#c9b096' : '#cec7b7';
+    const wallLow = dark ? '#242a2e' : warm ? '#b89f84' : '#bdb4a2';
+    const floor = dark ? '#1b2023' : '#8b7760';
+    const wood = dark ? '#4b3c2f' : '#a8825a';
+    const woodDark = dark ? '#33291f' : '#84643f';
+    const skyC = dark ? '#1c2b34' : warm ? '#e9a566' : '#a9c8d5';
+    const sheet = dark ? '#b9b3a4' : '#f3eddf';
+    const busy = variant === 'desk';
+    const door = variant === 'door';
+    return `
+      <rect width="400" height="300" fill="${wall}"/>
+      <rect y="236" width="400" height="64" fill="${floor}"/>
+      <path d="M0 236 H400" ${st(3)}/>
+      <path d="M0 194 H400" fill="none" stroke="${wallLow}" stroke-width="3"/>
+      <g opacity=".14" stroke="${C.ink}" stroke-width="2">
+        <path d="M124 194 v42 M224 194 v42 M324 194 v42"/>
+      </g>
+
+      <g>
+        <rect x="32" y="44" width="106" height="108" rx="2" fill="${skyC}" ${st(3)}/>
+        ${dark ? moon(112, 74, 14) : sun(112, 76, 12, warm ? C.orange : C.gold)}
+        <path d="M85 44 V152 M32 99 H138" fill="none" ${st(2.6)}/>
+        <rect x="24" y="152" width="122" height="9" rx="2" fill="${woodDark}" ${st(2.4)}/>
+        <path d="M32 44 h106 v108 h-106 z" fill="${dark ? C.gold : C.cream}" opacity="${dark ? .12 : .07}"/>
+      </g>
+
+      <g transform="translate(206 74)">
+        <circle r="20" fill="${C.cream}" ${st(2.8)}/>
+        <path d="M0 -13 V0 L9 6" fill="none" ${st(2.6)}/>
+        <circle r="2" fill="${C.ink}"/>
+      </g>
+
+      ${door ? `
+        <g>
+          <rect x="248" y="96" width="104" height="140" fill="${dark ? '#15181a' : '#5d462c'}" ${st(3)}/>
+          <path d="M248 96 L316 80 V236 L248 236 Z" fill="${C.gold}" opacity=".38" ${st(2.6)}/>
+          <path d="M316 80 V236" fill="none" ${st(3)}/>
+          <circle cx="306" cy="162" r="3.2" fill="${C.gold}" ${st(1.2)}/>
+        </g>
+        ${person({ x: 196, y: 244, s: .98, shirt: '#6f8190', pose: 'stand', face: 'sad', hairStyle: 'short', hair: '#2a2119' })}
+      ` : busy ? `
+        <g>
+          <rect x="150" y="206" width="200" height="11" rx="3" fill="${wood}" ${st(2.8)}/>
+          <path d="M166 217 v36 M334 217 v36" fill="none" ${st(4)}/>
+          <g transform="translate(268 178)">
+            <rect x="-24" y="4" width="48" height="28" rx="3" fill="${dark ? '#20262a' : '#3b4347'}" ${st(2.4)}/>
+            <path d="M-18 11 h36 M-18 17 h24 M-18 23 h30" stroke="${C.gold}" stroke-width="1.6" fill="none" opacity=".75"/>
+            <path d="M-28 32 h56 l-6 -9 h-44 z" fill="${dark ? '#4a5054' : '#e6dfd0'}" ${st(2.2)}/>
+          </g>
+          <g transform="translate(198 192)">
+            <rect x="-20" y="-13" width="40" height="28" rx="1" fill="${C.cream}" ${st(2)} transform="rotate(-7)"/>
+            <path d="M-13 -6 h24 M-13 0 h18 M-13 6 h22" stroke="${C.ink}" stroke-width="1.3" opacity=".4" fill="none" transform="rotate(-7)"/>
+          </g>
+          <g transform="translate(318 194)">
+            <path d="M-8 -14 h16 v14 q0 6 -8 6 q-8 0 -8 -6 z" fill="${dark ? '#5e6a6e' : '#dfd6c3'}" ${st(2.2)}/>
+            <path d="M8 -10 q8 0 8 6 q0 6 -8 6" fill="none" ${st(2.2)}/>
+            <path d="M-4 -20 q2 -4 0 -7 M2 -20 q2 -4 0 -7" fill="none" stroke="${C.cream}" stroke-width="1.6" opacity=".55"/>
+          </g>
+          <g opacity="${dark ? .8 : .5}">
+            <g transform="translate(238 104)"><rect x="-16" y="-11" width="32" height="22" rx="3" fill="${C.cream}" ${st(1.8)}/><path d="M-10 -4 h20 M-10 2 h12" stroke="${C.ink}" stroke-width="1.4" opacity=".5" fill="none"/></g>
+            <g transform="translate(300 132)"><rect x="-13" y="-9" width="26" height="18" rx="3" fill="${C.cream}" ${st(1.8)}/><path d="M-7 -3 h14 M-7 2 h9" stroke="${C.ink}" stroke-width="1.3" opacity=".5" fill="none"/></g>
+            <g transform="translate(340 88)"><rect x="-11" y="-8" width="22" height="16" rx="3" fill="${C.cream}" ${st(1.6)}/><path d="M-6 -2 h12 M-6 2 h8" stroke="${C.ink}" stroke-width="1.2" opacity=".5" fill="none"/></g>
+          </g>
+        </g>
+        ${person({ x: 118, y: 258, s: 1, shirt: '#5f7178', pose: 'think', face: 'tired', hairStyle: 'short', hair: '#241c16' })}
+      ` : `
+        <g>
+          <rect x="140" y="208" width="204" height="34" rx="5" fill="${sheet}" ${st(2.8)}/>
+          <rect x="140" y="232" width="204" height="16" rx="4" fill="${dark ? '#3a3f43' : '#e4dbc8'}" ${st(2.4)}/>
+          <path d="M140 222 q52 -8 104 -2 t100 -2" fill="none" stroke="${C.ink}" stroke-width="1.6" opacity=".18"/>
+          <rect x="336" y="170" width="20" height="78" rx="4" fill="${wood}" ${st(2.8)}/>
+          <rect x="130" y="216" width="14" height="58" rx="4" fill="${wood}" ${st(2.6)}/>
+          <rect x="296" y="194" width="38" height="15" rx="7" fill="${C.cream}" ${st(2.2)}/>
+          <path d="M146 240 v14 M330 240 v14" fill="none" ${st(3)}/>
+        </g>
+        ${lying(248, 208, .92, { shirt: '#b9c3c6', rot: -1 })}
+        <path d="M150 210 q46 -9 92 -2 q-4 20 -46 22 q-42 2 -46 -20 z" fill="${dark ? '#455257' : '#9fb5b2'}" ${st(2.4)}/>
+        <g transform="translate(352 206)">
+          <path d="M-8 0 h16 v-26 h-16 z" fill="${woodDark}" ${st(2.2)}/>
+          <path d="M0 -26 v-10" fill="none" ${st(3)}/>
+          <path d="M-14 -36 h28 l-6 -12 h-16 z" fill="${dark ? C.gold : C.orange}" ${st(2.2)}/>
+          <circle cx="0" cy="-42" r="24" fill="${C.gold}" opacity="${dark ? .22 : .16}"/>
+        </g>
+      `}
+      <path d="M0 300 H400" ${st(0)}/>
+    `;
+  }
+
+  /* sala de aula: quadro, professor e carteiras */
+  function classroom(time, variant) {
+    const dark = time === 'night' || time === 'dark';
+    const warm = time === 'dusk' || time === 'dawn';
+    const wall = dark ? '#2c3237' : warm ? '#c8ae92' : '#cfc7b6';
+    const floor = dark ? '#1b2023' : '#8b7760';
+    const board = dark ? '#1f3931' : '#2e4d42';
+    const chalk = C.cream;
+    const wood = dark ? '#4b3c2f' : '#a8825a';
+    const empty = variant === 'empty';
+    return `
+      <rect width="400" height="300" fill="${wall}"/>
+      <rect y="234" width="400" height="66" fill="${floor}"/>
+      <path d="M0 234 H400" ${st(3)}/>
+      <g>
+        <rect x="80" y="30" width="286" height="136" rx="5" fill="${board}" ${st(3)}/>
+        <rect x="88" y="38" width="270" height="120" rx="3" fill="none" stroke="${chalk}" stroke-width="1.2" opacity=".18"/>
+        <g stroke="${chalk}" stroke-width="2.6" fill="none" opacity=".8" stroke-linecap="round">
+          <path d="M108 68 h86"/>
+          <path d="M108 88 h132"/>
+          <path d="M108 108 h72"/>
+          <path d="M108 130 h150"/>
+        </g>
+        <circle cx="288" cy="96" r="24" fill="none" stroke="${chalk}" stroke-width="2.4" opacity=".7"/>
+        <path d="M270 122 q18 -16 36 2" fill="none" stroke="${chalk}" stroke-width="2.2" opacity=".6"/>
+        <path d="M264 96 h-12 M324 96 h12" stroke="${chalk}" stroke-width="2.2" opacity=".5" fill="none"/>
+      </g>
+      <g transform="translate(92 176)">
+        <rect x="0" y="0" width="40" height="9" rx="3" fill="${wood}" ${st(2)}/>
+        <rect x="-8" y="9" width="56" height="8" rx="2" fill="${dark ? '#3d3a34' : '#6a6558'}" ${st(2)}/>
+      </g>
+      ${person({ x: 196, y: 226, s: 1.02, shirt: '#7d6a4f', pants: '#3a3f42', pose: 'point', face: 'smile', hairStyle: 'short', hair: '#3b3129' })}
+      ${empty ? '' : `
+        ${seated(126, 250, 1, '#6c7f76')}
+        ${seated(214, 254, 1, '#7c6b7d')}
+        ${seated(302, 250, 1, '#6e7d64')}
+      `}
+      <g>
+        <rect x="70" y="240" width="92" height="8" rx="2" fill="${wood}" ${st(2.2)}/>
+        <path d="M80 248 v20 M152 248 v20" fill="none" ${st(3)}/>
+        <rect x="158" y="244" width="92" height="8" rx="2" fill="${wood}" ${st(2.2)}/>
+        <path d="M168 252 v20 M240 252 v20" fill="none" ${st(3)}/>
+        <rect x="246" y="240" width="92" height="8" rx="2" fill="${wood}" ${st(2.2)}/>
+        <path d="M256 248 v20 M328 248 v20" fill="none" ${st(3)}/>
+      </g>
+      <path d="M0 300 H400" ${st(0)}/>
+    `;
+  }
+
+  const SCENES = { mountain, beach, square, palace, cave, farm, pottery, river, kingdom, road, desert, gate, meadow, room, classroom };
 
   /* ---------------- efeitos ---------------- */
 

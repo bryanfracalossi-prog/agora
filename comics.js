@@ -614,5 +614,287 @@ const COMICS = [
       ]
     },
     quote: { text: 'Sou eu um homem que sonhou ser borboleta, ou uma borboleta sonhando ser homem?', author: 'Zhuangzi', source: 'conto taoista' }
+  },
+
+  {
+    id: 'metamorfose',
+    title: 'A metamorfose',
+    subtitle: 'O dia em que o corpo disse basta',
+    source: 'Franz Kafka — A Metamorfose',
+    themes: ['trabalho', 'identidade', 'saude'],
+    minutes: 4,
+    cover: { scene: 'room', time: 'dawn', variant: 'bed', zoom: 1.12, focus: [240, 190] },
+    intro: 'O horror da história de Kafka não é acordar inseto. É que a primeira pergunta da casa não foi “como você está?”, e sim “você vai perder o trem?”.',
+    panels: [
+      {
+        scene: 'room', time: 'dawn', variant: 'bed', zoom: 1.15, focus: [250, 195],
+        narration: 'Certa manhã, Gregor Samsa acordou num corpo que não era o seu. Pesado, estranho, impossível.',
+        bubbles: []
+      },
+      {
+        scene: 'room', time: 'day', variant: 'bed', zoom: 1.55, focus: [300, 165],
+        narration: 'Antes de tentar entender o que tinha acontecido, ele olhou o relógio. Perdera o trem. O chefe esperava.',
+        bubbles: [{ who: 'Gregor', text: 'Vou me atrasar.', pos: 'left' }]
+      },
+      {
+        scene: 'room', time: 'dusk', variant: 'door', zoom: 1.25, focus: [250, 180],
+        narration: 'Do outro lado da porta, a família batia. Preocupada com o atraso — não com o que acontecia lá dentro.',
+        bubbles: [
+          { who: 'Mãe', text: 'Você está bem?', pos: 'right' },
+          { who: 'Pai', text: 'E o trem?', pos: 'left' }
+        ]
+      },
+      {
+        scene: 'room', time: 'night', variant: 'bed', zoom: 1.0, fx: 'petals',
+        narration: 'Ele passou o resto da vida tentando ser útil de algum jeito. Ninguém perguntou se ele queria voltar a ser ele mesmo.',
+        bubbles: []
+      }
+    ],
+    lesson: {
+      title: 'Você não é o que você produz',
+      text: [
+        'Gregor não acordou monstro: acordou exausto. E a casa continuou funcionando enquanto ele tentava se levantar. A primeira pergunta foi sobre o trabalho, não sobre a dor.',
+        'Quando a gente adoece, o mundo costuma perguntar quando voltamos. Vale inverter a ordem: o que em mim já não aguenta mais? Pedir ajuda não é virar inseto — é parar de fingir que está tudo bem.'
+      ],
+      actions: [
+        'Pense em uma coisa que você faz todos os dias por obrigação. O que aconteceria se parasse por uma semana?',
+        'Diga a alguém de confiança: “eu não estou bem”, sem explicação e sem currículo.',
+        'Marque no celular um horário hoje em que você não vai produzir nada.'
+      ]
+    },
+    quote: { text: 'Quando certa manhã Gregor Samsa acordou de sonhos intranquilos, encontrou-se na cama metamorfoseado num inseto monstruoso.', author: 'Franz Kafka', source: 'A Metamorfose, abertura (tradução livre)' }
+  },
+
+  {
+    id: 'porta',
+    title: 'Diante da lei',
+    subtitle: 'A porta que esperou por você',
+    source: 'Franz Kafka — Diante da Lei',
+    themes: ['medo', 'tempo', 'liberdade'],
+    minutes: 3,
+    cover: { scene: 'gate', time: 'dusk', zoom: 1.18, focus: [200, 160] },
+    intro: 'Um homem passa a vida esperando permissão para atravessar uma porta. Ela estava aberta desde o começo — e era só dele.',
+    panels: [
+      {
+        scene: 'gate', time: 'day', zoom: 1.05, focus: [200, 180],
+        narration: 'Um homem do campo chegou à porta da lei e pediu licença para entrar.',
+        bubbles: [{ who: 'Homem', text: 'Posso entrar?', pos: 'left' }]
+      },
+      {
+        scene: 'gate', time: 'day', zoom: 1.6, focus: [230, 170],
+        narration: 'O guarda disse que agora não. Talvez depois. Talvez com mais um documento.',
+        bubbles: [{ who: 'Guarda', text: 'Agora não.', pos: 'right' }]
+      },
+      {
+        scene: 'gate', time: 'dusk', zoom: 1.2, focus: [190, 200],
+        narration: 'Ele sentou e esperou. Anos. Perguntou de novo, muitas vezes. Sempre havia um motivo para esperar mais um pouco.',
+        bubbles: [{ who: 'Homem', text: 'E agora?', pos: 'left' }]
+      },
+      {
+        scene: 'gate', time: 'night', zoom: 1.45, focus: [210, 185], fx: 'speed',
+        narration: 'No fim, o guarda disse: esta porta nunca foi para ninguém além de você. E agora vou fechá-la.',
+        bubbles: [{ who: 'Guarda', text: 'Esta porta era só sua.', pos: 'right' }]
+      }
+    ],
+    lesson: {
+      title: 'O medo inventa um guarda na porta',
+      text: [
+        'A gente adia a vida esperando se sentir pronto: o curso certo, o dinheiro certo, a coragem certa. Kafka transformou essa espera em parábola — e ela continua acontecendo.',
+        'O guarda da história não é uma pessoa má. É o medo de uniforme. Ele pede documentos que ninguém emite, e a porta segue ali, aberta.'
+      ],
+      actions: [
+        'Qual porta você está esperando permissão para atravessar? Escreva o nome dela.',
+        'Faça hoje a menor versão possível dessa coisa, sem aviso e sem plateia.',
+        'Pergunte: quem me disse que eu não posso? Essa pessoa ainda manda em mim?'
+      ]
+    },
+    quote: { text: 'Diante da lei está um guarda. Um homem do campo chega e pede para entrar.', author: 'Franz Kafka', source: 'O Processo (tradução livre)' }
+  },
+
+  {
+    id: 'clovis',
+    title: 'A aula sobre felicidade',
+    subtitle: 'Ninguém sabe direito — e é por isso que vale conversar',
+    source: 'inspirado nas aulas de Clóvis de Barros Filho',
+    themes: ['felicidade', 'etica', 'presenca'],
+    minutes: 4,
+    cover: { scene: 'classroom', time: 'day', zoom: 1.08, focus: [210, 150] },
+    intro: 'Clóvis de Barros Filho costuma começar pelo incômodo: todo mundo quer ser feliz, quase ninguém sabe dizer o que é. Em vez de uma resposta, ele propõe uma conversa.',
+    panels: [
+      {
+        scene: 'classroom', time: 'day', zoom: 1.0, focus: [200, 170],
+        narration: 'O professor entrou, escreveu uma palavra no quadro e esperou.',
+        bubbles: [{ who: 'Clóvis', text: 'O que é felicidade?', pos: 'right' }]
+      },
+      {
+        scene: 'classroom', time: 'day', zoom: 1.45, focus: [250, 120],
+        narration: 'A turma respondeu com viagens, dinheiro, casas, um amor. Ele ouviu tudo e não corrigiu ninguém.',
+        bubbles: [
+          { who: 'Aluna', text: 'Ter tempo?', pos: 'left' },
+          { who: 'Aluno', text: 'Não ter medo?', pos: 'right' }
+        ]
+      },
+      {
+        scene: 'classroom', time: 'dusk', zoom: 1.3, focus: [220, 160],
+        narration: 'Depois ele disse que talvez a felicidade não seja um lugar a chegar, mas um jeito de andar — e que esse jeito se aprende com os outros.',
+        bubbles: [{ who: 'Clóvis', text: 'A felicidade não se compra: se pratica.', pos: 'right' }]
+      },
+      {
+        scene: 'classroom', time: 'night', zoom: 1.0, fx: 'sparkle',
+        narration: 'A aula acabou sem resposta. Alguém saiu pensando — e, para ele, isso já era um começo.',
+        bubbles: []
+      }
+    ],
+    lesson: {
+      title: 'Felicidade é pergunta, não vitrine',
+      text: [
+        'Clóvis não vende fórmula. Ele desconfia de quem promete felicidade em três passos, porque vida boa não é produto: é prática, feita de escolhas pequenas e repetidas.',
+        'A pergunta “o que é felicidade para mim?” incomoda porque não tem resposta pronta. Talvez o incômodo seja o ponto: ele obriga a olhar para o que a gente realmente valoriza.'
+      ],
+      actions: [
+        'Escreva três coisas que te fazem bem e veja quantas delas custam dinheiro.',
+        'Pergunte a alguém o que é felicidade para essa pessoa. Só escute, sem discordar.',
+        'Faça hoje uma escolha pequena que combine com o que você acabou de responder.'
+      ]
+    },
+    quote: { text: 'A felicidade não é um lugar onde se chega; é um modo de caminhar.', author: 'Clóvis de Barros Filho', source: 'ideia recorrente em suas aulas (paráfrase nossa)' }
+  },
+
+  {
+    id: 'krenak',
+    title: 'Adiar o fim do mundo',
+    subtitle: 'Nem todo dia precisa ser o último',
+    source: 'inspirado em Ailton Krenak',
+    themes: ['medo', 'pertencimento', 'tempo'],
+    minutes: 4,
+    cover: { scene: 'river', time: 'dusk', zoom: 1.1, focus: [230, 180] },
+    intro: 'Krenak conta que ouviu, à beira de um rio, a pergunta que não sai da cabeça: e se o mundo não acabar hoje? E se der para adiar?',
+    panels: [
+      {
+        scene: 'river', time: 'day', zoom: 1.05, focus: [220, 180],
+        narration: 'O rio passava devagar. Do outro lado, gente corria como se o mundo fosse terminar à meia-noite.',
+        bubbles: []
+      },
+      {
+        scene: 'river', time: 'day', zoom: 1.35, focus: [205, 200],
+        narration: 'Ele diz que a humanidade é uma ideia bonita — mas ideia não planta, não canta, não cuida de rio. Precisa de gente.',
+        bubbles: [{ who: 'Krenak', text: 'A ideia precisa de gente.', pos: 'left' }]
+      },
+      {
+        scene: 'river', time: 'dusk', zoom: 1.35, focus: [210, 190],
+        narration: 'Adiar o fim do mundo não é fingir que está tudo bem. É recusar a pressa de quem lucra com o medo.',
+        bubbles: [{ who: 'Krenak', text: 'Vamos adiar o fim do mundo.', pos: 'right' }]
+      },
+      {
+        scene: 'river', time: 'night', zoom: 1.0, fx: 'sparkle',
+        narration: 'É acordar, comer, conversar, sentir o chão. É fazer hoje alguma coisa que valha a pena repetir amanhã.',
+        bubbles: []
+      }
+    ],
+    lesson: {
+      title: 'O futuro não precisa ser um alarme',
+      text: [
+        'Vivemos com o futuro tocando como despertador: catástrofe, crise, demissão, fim. O medo é real — mas não é o único lugar de onde dá para olhar.',
+        'Adiar o fim do mundo é uma ideia prática: cuidar do que está perto, do rio, da rua, do vizinho, do próprio corpo. Quem cuida de algo pequeno todos os dias não está esperando o fim — está fazendo outro começo.'
+      ],
+      actions: [
+        'Olhe pela janela por dois minutos e nomeie três coisas que continuam acontecendo sem pressa.',
+        'Faça uma coisa pequena por um espaço que você usa: uma praça, uma calçada, uma planta.',
+        'Escreva: “o que eu quero que continue existindo amanhã?”'
+      ]
+    },
+    quote: { text: 'Adiar o fim do mundo é uma proposta de vida, não de catástrofe.', author: 'Ailton Krenak', source: 'paráfrase de Ideias para Adiar o Fim do Mundo' }
+  },
+
+  {
+    id: 'cansaco',
+    title: 'A sociedade do cansaço',
+    subtitle: 'Quando descansar parece uma falha',
+    source: 'inspirado em Byung-Chul Han',
+    themes: ['trabalho', 'descanso', 'saude'],
+    minutes: 4,
+    cover: { scene: 'room', time: 'night', variant: 'desk', zoom: 1.1, focus: [230, 170] },
+    intro: 'Han diz que trocamos o chefe por nós mesmos. Agora ninguém precisa mandar: a gente se cobra sozinho, de casa, de madrugada, no domingo.',
+    panels: [
+      {
+        scene: 'room', time: 'night', variant: 'desk', zoom: 1.15, focus: [240, 175],
+        narration: 'Duas da manhã. Ele terminou o trabalho e abriu outra aba: “como ser mais produtivo”.',
+        bubbles: [{ who: 'Ele', text: 'Só mais uma coisa.', pos: 'left' }]
+      },
+      {
+        scene: 'room', time: 'night', variant: 'desk', zoom: 1.6, focus: [300, 130],
+        narration: 'Nenhum chefe tinha pedido aquilo. A cobrança era dele — e falava com a voz de quem quer o melhor para si.',
+        bubbles: []
+      },
+      {
+        scene: 'room', time: 'dawn', variant: 'desk', zoom: 1.3, focus: [210, 190],
+        narration: 'O corpo pediu pausa. Ele chamou de preguiça e prometeu compensar no fim de semana.',
+        bubbles: [{ who: 'Ele', text: 'Depois eu descanso.', pos: 'right' }]
+      },
+      {
+        scene: 'room', time: 'day', variant: 'bed', zoom: 1.0, fx: 'sparkle',
+        narration: 'Descanso não é o que sobra do trabalho. É parte do trabalho de continuar vivo.',
+        bubbles: []
+      }
+    ],
+    lesson: {
+      title: 'Descansar não é recompensa, é manutenção',
+      text: [
+        'A sociedade do cansaço não proíbe o descanso: ela o transforma em culpa. Você pode parar, desde que produza algo para mostrar depois.',
+        'Han não está dizendo para largar tudo. Está apontando que a autoexploração é mais eficiente que qualquer chefe — e mais difícil de perceber, porque vem com a nossa própria voz.'
+      ],
+      actions: [
+        'Anote quantas vezes hoje você disse “só mais uma coisa”.',
+        'Faça uma pausa de quinze minutos sem tela — e não transforme isso em produtividade.',
+        'Pergunte: estou cansado do trabalho ou cansado de me cobrar?'
+      ]
+    },
+    quote: { text: 'A sociedade do cansaço é uma sociedade do desempenho: cada um é senhor e escravo de si mesmo.', author: 'Byung-Chul Han', source: 'Sociedade do Cansaço (paráfrase)' }
+  },
+
+  {
+    id: 'bambu',
+    title: 'O bambu que esperou',
+    subtitle: 'Crescer embaixo da terra também é crescer',
+    source: 'conto popular chinês (adaptação livre)',
+    themes: ['tempo', 'coragem', 'descanso'],
+    minutes: 3,
+    cover: { scene: 'meadow', time: 'dawn', variant: 'bamboo', zoom: 1.2, focus: [250, 235] },
+    intro: 'Um mestre plantou uma semente e regou todos os dias. Por sete anos, nada apareceu. No oitavo, em seis semanas, o bambu passou de tudo o que havia ao redor.',
+    panels: [
+      {
+        scene: 'meadow', time: 'day', variant: 'bamboo', zoom: 1.2, focus: [250, 240],
+        narration: 'O jovem olhava o vaso vazio e perguntava por que continuar regando o nada.',
+        bubbles: [{ who: 'Jovem', text: 'Não vai nascer?', pos: 'left' }]
+      },
+      {
+        scene: 'meadow', time: 'day', variant: 'bamboo', zoom: 1.45, focus: [290, 250],
+        narration: 'O mestre respondeu que, embaixo da terra, as raízes já estavam trabalhando. Ninguém vê o trabalho, mas ele existe.',
+        bubbles: [{ who: 'Mestre', text: 'As raízes estão crescendo.', pos: 'right' }]
+      },
+      {
+        scene: 'meadow', time: 'dusk', variant: 'bamboo-tall', zoom: 1.05, focus: [250, 210],
+        narration: 'Sete anos depois, o bambu subiu metros em poucas semanas. Ninguém viu o esforço — só o resultado.',
+        bubbles: []
+      },
+      {
+        scene: 'meadow', time: 'night', variant: 'bamboo-tall', zoom: 1.0, fx: 'petals',
+        narration: 'Quem desiste no terceiro ano nunca descobre o que o oitavo guardava.',
+        bubbles: []
+      }
+    ],
+    lesson: {
+      title: 'Nem todo progresso aparece na superfície',
+      text: [
+        'A comparação mente: mostra o bambu de seis semanas e esconde os sete anos de raiz. A gente olha a vida dos outros no ponto de virada e conclui que está atrasada.',
+        'Seu crescimento pode estar acontecendo num lugar que ninguém vê — inclusive você. Isso não é desculpa para não agir: é motivo para não se abandonar no meio.'
+      ],
+      actions: [
+        'Liste três coisas que você aprendeu no último ano e que ninguém vê.',
+        'Escolha um hábito pequeno e faça por sete dias, sem contar a ninguém.',
+        'Troque “estou atrasado” por “estou construindo raiz”.'
+      ]
+    },
+    quote: { text: 'O bambu leva sete anos para criar raiz e seis semanas para alcançar o céu.', author: 'provérbio chinês', source: 'tradição oral' }
   }
 ];
