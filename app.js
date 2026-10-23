@@ -2118,6 +2118,22 @@
 
   /* ---------------- rotas ---------------- */
 
+  // topo fixo: a sombra só aparece quando o conteúdo sai do lugar
+  const topbar = document.querySelector('.topbar');
+  if (topbar) {
+    let topbarTick = false;
+    const syncTopbar = () => {
+      topbar.classList.toggle('is-scrolled', window.scrollY > 6);
+      topbarTick = false;
+    };
+    window.addEventListener('scroll', () => {
+      if (topbarTick) return;
+      topbarTick = true;
+      requestAnimationFrame(syncTopbar);
+    }, { passive: true });
+    syncTopbar();
+  }
+
   window.addEventListener('hashchange', () => render());
   render();
   applyTheme();
