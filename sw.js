@@ -1,10 +1,10 @@
 'use strict';
 
-/* Ágora — rede primeiro, cache como reserva offline.
+/* NEURON — rede primeiro, cache como reserva offline.
    Assim qualquer melhoria chega na próxima abertura,
    e o app continua funcionando sem internet. */
 
-const CACHE = 'agora-v2';
+const CACHE = 'neuron-v1';
 const ASSETS = [
   './',
   './index.html',
@@ -15,9 +15,10 @@ const ASSETS = [
   './circle.js',
   './app.js',
   './manifest.webmanifest',
-  './icons/icon.svg',
-  './icons/icon-192.png',
-  './icons/icon-512.png'
+  './icons/neuron-192.png',
+  './icons/neuron-512.png',
+  './icons/neuron-maskable-512.png',
+  './icons/neuron-180.png'
 ];
 
 self.addEventListener('install', (event) => {

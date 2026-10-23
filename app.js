@@ -1,4 +1,4 @@
-/* Ágora — lógica do app
+/* NEURON — lógica do app
    Sem dependências. Tudo salvo no localStorage do aparelho. */
 
 (() => {
@@ -217,10 +217,10 @@
 
   function circleBannerHTML() {
     if (circleData.error) {
-      return `<div class="circle-banner is-warn">${ICON.lifebuoy}<p><strong>O Círculo compartilhado não respondeu.</strong> ${esc(circleData.error)} Seus posts ficam neste aparelho. Para conversar com outras pessoas, inicie o servidor do Ágora.</p></div>`;
+      return `<div class="circle-banner is-warn">${ICON.lifebuoy}<p><strong>O Círculo compartilhado não respondeu.</strong> ${esc(circleData.error)} Seus posts ficam neste aparelho. Para conversar com outras pessoas, inicie o servidor do NEURON.</p></div>`;
     }
     if (circleData.mode === 'local') {
-      return `<div class="circle-banner is-local">${ICON.lock}<p><strong>Modo local.</strong> Este Círculo está só neste aparelho. Para abrir para outras pessoas, inicie o servidor do Ágora (<code>serve.ps1</code>) e acesse pelo endereço dele.</p></div>`;
+      return `<div class="circle-banner is-local">${ICON.lock}<p><strong>Modo local.</strong> Este Círculo está só neste aparelho. Para abrir para outras pessoas, inicie o servidor do NEURON (<code>serve.ps1</code>) e acesse pelo endereço dele.</p></div>`;
     }
     if (circleData.mode === 'online') {
       return `<div class="circle-banner is-online">${ICON.users}<p><strong>Você está no Círculo compartilhado.</strong> Do outro lado tem uma pessoa. Responda como você gostaria de ser respondido.</p></div>`;
@@ -294,7 +294,7 @@
           <div class="circle-post-meta">
             <div class="circle-post-who">
               <strong>${esc(author)}</strong>
-              ${p.app ? '<span class="app-tag">Ágora</span>' : ''}
+              ${p.app ? '<span class="app-tag">NEURON</span>' : ''}
               ${p.anonymous && !p.app ? '<span class="anon-tag">anônimo</span>' : ''}
             </div>
             <div class="circle-post-sub">

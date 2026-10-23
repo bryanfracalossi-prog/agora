@@ -1,6 +1,6 @@
-/* Ágora — Círculo
+/* NEURON — Círculo
    Camada de dados do espaço de apoio entre pessoas.
-   - Online: /api/community (servidor local do Ágora, compartilhado na rede)
+   - Online: /api/community (servidor local do NEURON, compartilhado na rede)
    - Local: localStorage, quando o app é aberto sem o servidor
    Nenhum texto é enviado para serviços de terceiros. */
 
@@ -151,7 +151,7 @@ const CIRCLE = (() => {
     const app = (text, mood, ago) => ({
       id: randomId('app'),
       ts: now - ago,
-      author: 'Ágora',
+      author: 'NEURON',
       anonymous: false,
       app: true,
       mood,

@@ -1,4 +1,4 @@
-/* Ágora — arte das tirinhas (edição quadrinho/mangá)
+/* NEURON — arte das tirinhas (edição quadrinho/mangá)
    Ilustrações vetoriais originais, sem imagens externas.
    Traço grosso, retícula, enquadramentos dramáticos e expressões de mangá. */
 

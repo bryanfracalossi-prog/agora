@@ -1,4 +1,4 @@
-/* Ágora — conteúdo editorial
+/* NEURON — conteúdo editorial
    Histórias, lições e pausas. Citações em tradução/adaptação livre.
    O objetivo é abrir conversa, não fechar respostas. */
 

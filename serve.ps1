@@ -1,4 +1,4 @@
-﻿# Servidor local do Ágora (sem instalar nada).
+﻿# Servidor local do NEURON (sem instalar nada).
 # Uso: clique com o botão direito > "Executar com PowerShell"
 #      ou: powershell -ExecutionPolicy Bypass -File .\serve.ps1
 #
@@ -90,7 +90,7 @@ function New-Data {
     $welcome = [pscustomobject]@{
         id = 'app-welcome'
         ts = $now - 1080000
-        author = 'Ágora'
+        author = 'NEURON'
         anonymous = $false
         app = $true
         mood = 'acolhimento'
@@ -107,7 +107,7 @@ function New-Data {
     $future = [pscustomobject]@{
         id = 'app-future'
         ts = $now - 360000
-        author = 'Ágora'
+        author = 'NEURON'
         anonymous = $false
         app = $true
         mood = 'futuro'
@@ -329,7 +329,7 @@ catch {
 }
 
 Write-Host ""
-Write-Host "  Agora - servidor local" -ForegroundColor Yellow
+Write-Host "  NEURON - servidor local" -ForegroundColor Yellow
 Write-Host "  Pasta: $root"
 Write-Host "  No PC:      $url" -ForegroundColor Cyan
 Write-Host "  Circulo:    ${url}api/community/health" -ForegroundColor Cyan
@@ -417,7 +417,7 @@ while ($true) {
             $data = Read-Data
 
             if ($path -eq '/api/community/health' -and $method -eq 'GET') {
-                Send-Json $stream '200 OK' @{ ok = $true; service = 'agora-circle'; mode = 'online'; version = 1 }
+                Send-Json $stream '200 OK' @{ ok = $true; service = 'neuron-circle'; mode = 'online'; version = 1 }
                 continue
             }
 

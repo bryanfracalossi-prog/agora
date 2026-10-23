@@ -1,4 +1,4 @@
-# Ágora — histórias para viver melhor
+# NEURON — histórias para viver melhor
 
 Um app (PWA) em português para quem anda cansado de trabalhar demais, de correr atrás de dinheiro e de sentir que nunca é suficiente. Cada filósofo vira uma **tirinha**, cada tirinha vira uma **lição**, e cada lição termina em uma pergunta que cabe no seu dia.
 
@@ -50,7 +50,7 @@ Cuidados já implementados:
 - **Limite de tamanho** e **rate limit por IP** no servidor.
 - **Blocklist** básica de termos e links.
 - **Detecção de sofrimento**: se o texto sugerir risco, o app mostra CVV 188, SAMU 192 e orientação sobre CAPS e clínicas-escola antes de publicar.
-- **Nenhum usuário fictício.** Os posts iniciais são assinados pela própria Ágora.
+- **Nenhum usuário fictício.** Os posts iniciais são assinados pela própria NEURON.
 
 ### API
 
@@ -92,7 +92,7 @@ O app é estático, então o Pages serve tudo — **menos a API**. No Pages o C�
 | `app.js` | Rotas, leitor, diário, práticas, Círculo na interface |
 | `circle.js` | Camada de dados do Círculo (online + local) |
 | `serve.ps1` | Servidor local + API do Círculo (Windows PowerShell) |
-| `sw.js` | Cache offline (`agora-v2`) |
+| `sw.js` | Cache offline (`neuron-v1`) |
 | `manifest.webmanifest` | Instalação como app |
 | `icons/` | Ícones |
 

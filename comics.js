@@ -1,4 +1,4 @@
-/* Ágora — as tirinhas
+/* NEURON — as tirinhas
    Histórias antigas contadas em painéis curtos.
    Cada painel: cena (comicart.js), tempo, zoom, foco, narração e falas. */
 
